@@ -9,6 +9,7 @@ function App() {
       return
     }
     setChoices([...choices, option])
+    setOption('')
   }
 
   return (
