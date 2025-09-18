@@ -5,19 +5,21 @@ function App() {
   const [choices, setChoices] = useState(['tester'])
   const [selectedChoice, setSelectedChoice] = useState('')
   const [option, setOption] = useState('')
+  const [availableID, setAvailableID] = useState(0)
   function addChoice() {
     if (option == '') {
       return
     }
-    setChoices([...choices, option])
+    setChoices([...choices, {id: availableID, option: option}])
     setOption('')
+    setAvailableID(availableID + 1)
   }
 
   function deleteChoice() {
     if (selectedChoice == '') {
       return
     }
-    
+
   }
 
   return (
@@ -26,7 +28,9 @@ function App() {
       <button>Decide</button>
       <div>
         <p>Choices</p>
-        {choices}
+        {choices.map(choice => (
+          <p id={choice.id}>{choice.option}</p>
+        ))}
       </div>
       <div>
         <p>Option</p>
