@@ -2,6 +2,11 @@ import { useState } from 'react'
 import './App.css'
 
 function App() {
+  const [choices, setChoices] = useState([])
+
+  function addChoice() {
+
+  }
 
   return (
     <>
