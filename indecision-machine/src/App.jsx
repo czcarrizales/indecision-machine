@@ -3,9 +3,12 @@ import './App.css'
 
 function App() {
   const [choices, setChoices] = useState(['tester'])
-
+  const [option, setOption] = useState('')
   function addChoice() {
-    setChoices([...choices, 'test'])
+    if (option == '') {
+      return
+    }
+    setChoices([...choices, option])
   }
 
   return (
@@ -18,7 +21,7 @@ function App() {
       </div>
       <div>
         <p>Option</p>
-        <input type="text" />
+        <input type="text" value={option} onChange={e => setOption(e.target.value)} />
       </div>
       <button onClick={() => addChoice()}>Add</button>
       <button>Remove</button>
