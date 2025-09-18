@@ -3,6 +3,7 @@ import './App.css'
 
 function App() {
   const [choices, setChoices] = useState(['tester'])
+  const [selectedChoice, setSelectedChoice] = useState('')
   const [option, setOption] = useState('')
   function addChoice() {
     if (option == '') {
@@ -10,6 +11,13 @@ function App() {
     }
     setChoices([...choices, option])
     setOption('')
+  }
+
+  function deleteChoice() {
+    if (selectedChoice == '') {
+      return
+    }
+    
   }
 
   return (
