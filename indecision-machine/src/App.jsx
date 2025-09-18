@@ -5,7 +5,7 @@ function App() {
   const [choices, setChoices] = useState(['tester'])
   const [selectedChoice, setSelectedChoice] = useState('')
   const [option, setOption] = useState('')
-  const [availableID, setAvailableID] = useState(0)
+  const [availableID, setAvailableID] = useState(1)
   function addChoice() {
     if (option == '') {
       return
@@ -19,7 +19,7 @@ function App() {
     if (selectedChoice == '') {
       return
     }
-
+    setChoices(choices.filter(o => o.id !== selectedChoice))
   }
 
   return (
@@ -27,9 +27,10 @@ function App() {
     <div>
       <button>Decide</button>
       <div>
+        <p>{selectedChoice}</p>
         <p>Choices</p>
         {choices.map(choice => (
-          <p id={choice.id}>{choice.option}</p>
+          <p id={choice.id} onClick={() => setSelectedChoice(choice.id)}>{choice.option}</p>
         ))}
       </div>
       <div>
@@ -37,7 +38,7 @@ function App() {
         <input type="text" value={option} onChange={e => setOption(e.target.value)} />
       </div>
       <button onClick={() => addChoice()}>Add</button>
-      <button>Remove</button>
+      <button onClick={() => deleteChoice()}>Remove</button>
     </div>
     </>
   )
