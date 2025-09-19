@@ -12,7 +12,7 @@ function App() {
     if (option == '') {
       return
     }
-    setChoices([...choices, {id: availableID, option: option}])
+    setChoices([...choices, { id: availableID, option: option }])
     setOption('')
     setAvailableID(availableID + 1)
   }
@@ -26,30 +26,34 @@ function App() {
   }
 
   function decideChoice() {
-    const randomChoice = choices[Math.floor(Math.random()*choices.length)]
+    const randomChoice = choices[Math.floor(Math.random() * choices.length)]
     setSelectedChoice(randomChoice.id)
     setOpenModal(true)
   }
 
   return (
     <>
-    <div className='app-container'>
-      <button onClick={() => decideChoice()}>Decide</button>
-      <div>
-        <p>{selectedChoice}</p>
-        <p>Choices</p>
-        {choices.map(choice => (
-          <p id={choice.id} onClick={() => setSelectedChoice(choice.id)}>{choice.option}</p>
-        ))}
+      <div className='app-container'>
+        <button className='decide-button' onClick={() => decideChoice()}>Decide</button>
+        <div className='choice-list-container'>
+          <p className='choice-list-title'>Choices</p>
+          <div className='choice-list'>
+            {choices.map(choice => (
+              <p id={choice.id} onClick={() => setSelectedChoice(choice.id)}>{choice.option}</p>
+            ))}
+          </div>
+
+        </div>
+        <div className='command-list-container'>
+          <div>
+            <p>Option:</p>
+            <input type="text" value={option} onChange={e => setOption(e.target.value)} />
+          </div>
+          <button onClick={() => addChoice()}>Add</button>
+          <button onClick={() => deleteChoice()}>Remove</button>
+        </div>
       </div>
-      <div>
-        <p>Option</p>
-        <input type="text" value={option} onChange={e => setOption(e.target.value)} />
-      </div>
-      <button onClick={() => addChoice()}>Add</button>
-      <button onClick={() => deleteChoice()}>Remove</button>
-    </div>
-    {openModal && <Modal choices={choices} selectedChoice={selectedChoice} closeModal={setOpenModal} />}
+      {openModal && <Modal choices={choices} selectedChoice={selectedChoice} closeModal={setOpenModal} />}
     </>
   )
 }

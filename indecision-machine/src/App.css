@@ -1,3 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 .app-container {
   border: solid black;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.decide-button {
+  padding: 1rem;
+}
+
+.choice-list-container {
+  border: 1px solid black;
+  margin-top: 1rem;
+}
+
+.choice-list-title {
+  
+}
+
+.choice-list {
+ 
+}
+
+.command-list-container {
+  border: solid green;
+  display: flex;
 }
