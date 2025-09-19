@@ -3,7 +3,7 @@ import './App.css'
 import Modal from './Modal'
 
 function App() {
-  const [choices, setChoices] = useState([{id: 1908743, option: 'Test.'}, {id: 2572374, option: 'Doing this and that and this and that and even more of anything and more and more and whatever and all this.'},{id: 1908743, option: 'That thing and that other thing.'},])
+  const [choices, setChoices] = useState([{id: 1908743, option: 'Test.'}, {id: 2572374, option: 'Doing this and that and this and that and even more of anything and more and more and whatever and all this.'},{id: 1903, option: 'That thing and that other thing.'},])
   const [selectedChoice, setSelectedChoice] = useState('')
   const [option, setOption] = useState('')
   const [availableID, setAvailableID] = useState(1)
@@ -39,7 +39,7 @@ function App() {
           <p className='choice-list-title'>Choices</p>
           <div className='choice-list'>
             {choices.map(choice => (
-              <p className='choice' id={choice.id} onClick={() => setSelectedChoice(choice.id)}>{choice.option}</p>
+              <p className={choice.id === selectedChoice ? 'choice choice-selected' : 'choice'} id={choice.id} onClick={() => setSelectedChoice(choice.id)}>{choice.option}</p>
             ))}
           </div>
 

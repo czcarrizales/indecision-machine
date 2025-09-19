@@ -39,6 +39,10 @@
   cursor: pointer;
 }
 
+.choice-selected {
+  background-color: yellow;
+}
+
 .command-list-container {
   border: solid green;
   display: flex;
