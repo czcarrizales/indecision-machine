@@ -9,6 +9,9 @@ function App() {
   const [availableID, setAvailableID] = useState(1)
   const [openModal, setOpenModal] = useState(false)
   function addChoice() {
+    if (openModal) {
+      return
+    }
     if (option == '') {
       return
     }
@@ -18,7 +21,11 @@ function App() {
   }
 
   function deleteChoice() {
+    if (openModal) {
+      return
+    }
     if (selectedChoice == '') {
+      setOpenModal(true)
       return
     }
     setChoices(choices.filter(o => o.id !== selectedChoice))
@@ -26,6 +33,9 @@ function App() {
   }
 
   function decideChoice() {
+    if (openModal) {
+      return
+    }
     const randomChoice = choices[Math.floor(Math.random() * choices.length)]
     setSelectedChoice(randomChoice.id)
     setOpenModal(true)
@@ -54,7 +64,7 @@ function App() {
           </div>
         </div>
 
-      {openModal && <Modal choices={choices} selectedChoice={selectedChoice} closeModal={setOpenModal} />}
+      {openModal && <Modal option={option} choices={choices} selectedChoice={selectedChoice} closeModal={setOpenModal} />}
     </>
   )
 }
