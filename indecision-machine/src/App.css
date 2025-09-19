@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 * {
   margin: 0;
   padding: 0;
+  font-family: "Roboto", sans-serif;
 }
 
 .app-container {
@@ -12,6 +15,10 @@
 
 .decide-button {
   padding: 1rem;
+  border-radius: .5rem;
+  border-style: none;
+  background-color: rgb(83, 83, 83);
+  color: black;
 }
 
 .choice-list-container {
@@ -20,14 +27,31 @@
 }
 
 .choice-list-title {
-  
+  font-weight: bold;
 }
 
 .choice-list {
- 
+  border: solid blue;
+}
+
+.choice:hover {
+  background-color: yellow;
+  cursor: pointer;
 }
 
 .command-list-container {
   border: solid green;
   display: flex;
+}
+
+.add-button {
+  background-color: green;
+  border-style: none;
+  border-radius: .5rem;
+}
+
+.remove-button {
+  background-color: red;
+  border-style: none;
+  border-radius: .5rem;
 }
