@@ -38,6 +38,7 @@ body{
 
 .decide-button:hover {
   cursor: pointer;
+  opacity: 90%;
 }
 
 .choice-list-container {
@@ -76,6 +77,18 @@ body{
   justify-content:space-between;
 }
 
+.option-input-container {
+  display: flex;
+  align-items: center;
+}
+
+.option-input {
+  padding: 1rem;
+  margin-left: .5rem;
+  border-radius: .5rem;
+  border: 1px solid hsl(0, 0%, 60%);
+}
+
 .add-button {
   background-color: rgb(0, 196, 0);
   border-style: none;
@@ -86,6 +99,7 @@ body{
 
 .add-button:hover {
   cursor: pointer;
+  opacity: 90%;
 }
 
 .remove-button {
@@ -98,4 +112,5 @@ body{
 
 .remove-button:hover {
   cursor: pointer;
+  opacity: 90%;
 }
