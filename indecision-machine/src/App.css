@@ -21,6 +21,10 @@
   color: black;
 }
 
+.decide-button:hover {
+  cursor: pointer;
+}
+
 .choice-list-container {
   border: 1px solid black;
   margin-top: 1rem;
@@ -54,8 +58,16 @@
   border-radius: .5rem;
 }
 
+.add-button:hover {
+  cursor: pointer;
+}
+
 .remove-button {
   background-color: red;
   border-style: none;
   border-radius: .5rem;
+}
+
+.remove-button:hover {
+  cursor: pointer;
 }

@@ -14,3 +14,7 @@
     margin: auto;
     margin-top: 1rem;
 }
+
+.modal-button:hover {
+    cursor: pointer;
+}
