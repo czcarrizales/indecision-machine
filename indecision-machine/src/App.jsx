@@ -33,7 +33,7 @@ function App() {
 
   return (
     <>
-    <div>
+    <div className='app-container'>
       <button onClick={() => decideChoice()}>Decide</button>
       <div>
         <p>{selectedChoice}</p>
