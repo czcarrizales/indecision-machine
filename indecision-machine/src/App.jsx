@@ -3,7 +3,7 @@ import './App.css'
 import Modal from './Modal'
 
 function App() {
-  const [choices, setChoices] = useState([{ id: 1908743, option: 'Test.' }, { id: 2572374, option: 'Doing this and that and this and that and even more of anything and more and more and whatever and all this.' }, { id: 1903, option: 'That thing and that other thing.' },])
+  const [choices, setChoices] = useState([{ id: 1908743, option: 'Finish Silksong' }, { id: 2572374, option: 'Watch Lord of the Rings Trilogy' }, { id: 1903, option: 'Finish homework' }, { id: 190433, option: 'Throw out trash' }, { id: 194203, option: 'Take car to auto repair shop' }, { id: 19203, option: 'Clean out fridge' }])
   const [selectedChoice, setSelectedChoice] = useState('')
   const [option, setOption] = useState('')
   const [availableID, setAvailableID] = useState(1)
