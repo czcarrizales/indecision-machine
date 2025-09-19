@@ -6,11 +6,22 @@
   font-family: "Roboto", sans-serif;
 }
 
+body{
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center; /*centers items on the line (the x-axis by default)*/
+  align-items: center; /*centers items on the cross-axis (y by default)*/
+}
+
 .app-container {
-  border: solid black;
+  border: solid red;
   display: flex;
   flex-direction: column;
   padding: 1rem;
+  max-width: 500px;
 }
 
 .decide-button {
@@ -26,16 +37,24 @@
 }
 
 .choice-list-container {
-  border: 1px solid black;
+  border: 1px solid yellow;
   margin-top: 1rem;
+  overflow-y: scroll;
+  max-height: 300px;
 }
 
 .choice-list-title {
   font-weight: bold;
+  padding: 1rem;
 }
 
 .choice-list {
-  border: solid blue;
+  
+}
+
+.choice {
+  padding: 1rem;
+  border-top: 1px solid black;
 }
 
 .choice:hover {
@@ -48,8 +67,9 @@
 }
 
 .command-list-container {
-  border: solid green;
+  border: solid orange 1px;
   display: flex;
+  margin-top: 1rem;
 }
 
 .add-button {
