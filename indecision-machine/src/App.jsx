@@ -47,7 +47,7 @@ function App() {
           <div className='command-list-container'>
             <div className='option-input-container'>
               <p>Option:</p>
-              <input className='option-input' type="text" value={option} onChange={e => setOption(e.target.value)} />
+              <input className='option-input' type="text" value={option} placeholder='Type a task here!' onChange={e => setOption(e.target.value)} />
             </div>
             <button className='add-button' onClick={() => addChoice()}>Add</button>
             <button className='remove-button' onClick={() => deleteChoice()}>Remove</button>
