@@ -3,7 +3,7 @@ import './App.css'
 import Modal from './Modal'
 
 function App() {
-  const [choices, setChoices] = useState(['tester'])
+  const [choices, setChoices] = useState([])
   const [selectedChoice, setSelectedChoice] = useState('')
   const [option, setOption] = useState('')
   const [availableID, setAvailableID] = useState(1)
@@ -22,6 +22,7 @@ function App() {
       return
     }
     setChoices(choices.filter(o => o.id !== selectedChoice))
+    setSelectedChoice('')
   }
 
   function decideChoice() {
