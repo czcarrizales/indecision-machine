@@ -26,9 +26,8 @@ function App() {
   }
 
   function decideChoice() {
-    if (selectedChoice == '') {
-      return
-    }
+    const randomChoice = choices[Math.floor(Math.random()*choices.length)]
+    setSelectedChoice(randomChoice.id)
     setOpenModal(true)
   }
 
@@ -50,7 +49,7 @@ function App() {
       <button onClick={() => addChoice()}>Add</button>
       <button onClick={() => deleteChoice()}>Remove</button>
     </div>
-    {openModal && <Modal selectedChoice={selectedChoice} closeModal={setOpenModal} />}
+    {openModal && <Modal choices={choices} selectedChoice={selectedChoice} closeModal={setOpenModal} />}
     </>
   )
 }
