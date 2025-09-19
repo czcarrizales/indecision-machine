@@ -1,11 +1,13 @@
 import { useState } from 'react'
 import './App.css'
+import Modal from './Modal'
 
 function App() {
   const [choices, setChoices] = useState(['tester'])
   const [selectedChoice, setSelectedChoice] = useState('')
   const [option, setOption] = useState('')
   const [availableID, setAvailableID] = useState(1)
+  const [openModal, setOpenModal] = useState(false)
   function addChoice() {
     if (option == '') {
       return
@@ -22,10 +24,17 @@ function App() {
     setChoices(choices.filter(o => o.id !== selectedChoice))
   }
 
+  function decideChoice() {
+    if (selectedChoice == '') {
+      return
+    }
+    setOpenModal(true)
+  }
+
   return (
     <>
     <div>
-      <button>Decide</button>
+      <button onClick={() => decideChoice()}>Decide</button>
       <div>
         <p>{selectedChoice}</p>
         <p>Choices</p>
@@ -40,6 +49,7 @@ function App() {
       <button onClick={() => addChoice()}>Add</button>
       <button onClick={() => deleteChoice()}>Remove</button>
     </div>
+    {openModal && <Modal selectedChoice={selectedChoice} closeModal={setOpenModal} />}
     </>
   )
 }
