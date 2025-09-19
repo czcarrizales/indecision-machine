@@ -17,11 +17,13 @@ body{
 }
 
 .app-container {
-  border: solid red;
   display: flex;
   flex-direction: column;
   padding: 1rem;
+  width: 100%;
   max-width: 500px;
+  border-radius: 10px;
+  box-shadow: 4px 4px 4px 4px hsl(0, 0%, 75%);
 }
 
 .decide-button {
@@ -39,10 +41,9 @@ body{
 }
 
 .choice-list-container {
-  border: 1px solid yellow;
+  border: 1px solid hsl(0, 0%, 75%);
   margin-top: 1rem;
-  overflow-y: scroll;
-  max-height: 300px;
+  border-radius: 10px;
 }
 
 .choice-list-title {
@@ -51,27 +52,28 @@ body{
 }
 
 .choice-list {
-  
+    overflow-y: scroll;
+    max-height: 300px;
 }
 
 .choice {
   padding: 1rem;
-  border-top: 1px solid black;
+  border-top: 1px solid hsl(0, 0%, 80%);
 }
 
 .choice:hover {
-  background-color: yellow;
+  background-color: hsl(0, 0%, 92%);
   cursor: pointer;
 }
 
 .choice-selected {
-  background-color: yellow;
+  background-color: hsl(0, 0%, 92%);
 }
 
 .command-list-container {
-  border: solid orange 1px;
   display: flex;
   margin-top: 1rem;
+  justify-content:space-between;
 }
 
 .add-button {
